@@ -1,0 +1,15 @@
+.date-picker {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .date-picker label {
+    margin-bottom: 5px;
+  }
+  
+  .date-picker input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  

@@ -1,0 +1,48 @@
+.combo-box {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .selected-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .options-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+  }
+  
+  .options-list li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .options-list li:hover {
+    background-color: #f2f2f2;
+  }
+
+  .combo-box .selected-option svg {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .combo-box.open .selected-option svg {
+    transform: rotate(180deg);
+  }
+  
+  

@@ -1,0 +1,147 @@
+/* CSS */
+@import '~typeface-open-sans/index.css';
+
+.searchBoxContainer {
+        max-width: 850px;
+        margin: 40px auto;
+      }
+      
+      .searchBoxContainer .searchBox {
+        border: 3px solid black;
+        box-shadow: 2px 17px 29px gray;
+        padding: 25px;
+        border-radius: 25px;
+        /* font-family: cursive; */
+        font-family: 'Open Sans', sans-serif;
+        background-color: lightblue;
+        color: black;
+        width: 100%;
+      }
+      
+      .searchBox .col-md-6 {
+        width: 50%;
+        margin-bottom: 20px;
+      }
+      
+      .searchBox .incremtor {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+      .searchBox .incremtor label {
+        margin-right: 4px;
+      }
+      
+      .searchBox .incremtor button {
+        margin: 0px 4px;
+      }
+      
+      .searchBox .combo-box {
+        width: 100%;
+      }
+      
+
+      .searchBox .datePickerContainer .checkInDate{
+        margin-bottom: 16px;
+      }
+
+.formBtn{
+        display: flex;
+        justify-content: center;
+}
+
+      .resultButton {
+        background-image: linear-gradient(to right, lightblue 0%, lightblue 50%, navy 50%, navy 100%);
+        background-size: 201% 100%;
+        background-position: right center;
+        color: white;
+        border: 2px solid navy;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-position 0.3s;
+      }
+      
+      .resultButton:hover {
+        background-position: left center;
+      }
+      
+      
+      .filterOption {
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        justify-content: space-evenly;
+
+      }
+      
+      .filterOption > div {
+        margin-right: 10px;
+      }
+      
+      .filterOption label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+      
+      .filterOption input[type='checkbox'] {
+        margin-right: 5px;
+      }
+      
+      .filterOption input[type='checkbox']:checked + .tickOption {
+        font-weight: bold;
+      }
+      
+      /* .filterOption input[type='checkbox']:checked + span::before {
+        content: '✓ ';
+      } */
+      
+
+      .searchBoxContainer .searchBox p{
+        margin-bottom: 5px;
+      }
+
+
+
+      .searchBoxContainer .searchBox .combo-box{
+        margin-bottom: 16px;
+      }
+
+
+      .searchBoxContainer .searchBox p {
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+.searchBoxContainer .searchBox .checkInDate , .checkOutDate label{
+  font-weight: 700;
+  text-transform: uppercase;
+      }
+      
+.searchBox .incremtor label{
+  font-weight: 700;
+  text-transform: uppercase;
+
+}
+
+      .searchBoxContainer .searchBox .checkOutDate , .starRating , .multiSelect{
+        margin-bottom: 16px;
+      }
+
+
+      @media (max-width: 892px) {
+        .searchBoxContainer {
+          max-width: 100%;
+          margin: 10px 10px;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        .searchBox .col-md-6 {
+          width: 100%;
+        }
+      }
+      
