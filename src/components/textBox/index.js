@@ -10,7 +10,7 @@ const TextBox = () => {
 
   return (
     <div className="text-box">
-      <input type="text" value={text} onChange={handleChange} className="input-text" />
+      <input type="text" value={text} onChange={handleChange} className="input-text" placeholder="Enter Your Input" />
       {/* <p className="entered-text">You entered: {text}</p> */}
     </div>
   );

@@ -12,6 +12,7 @@ import StarRating from './components/starRating';
 import TextBox from './components/textBox';
 import MultiSelectComboBox from './components/comboBoxMultiSelect';
 import axios from 'axios';
+import ResultPage from './components/resultComponent';
 
 function App() {
   const [selectedValues, setSelectedValues] = useState([]);
@@ -85,6 +86,7 @@ function App() {
   };
 
   return (
+    <>
     <div className="App">
       <div className='searchBoxContainer'>
         <div className='searchBox'>
@@ -168,10 +170,18 @@ function App() {
                 Result
               </div>
               </div>
+             
           </div>
         </div>
       </div>
     </div>
+
+    {/* // Result Page Start Region */}
+    
+    <div>
+    <ResultPage />
+    </div>
+    </>
   );
 }
 
