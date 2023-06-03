@@ -1,6 +1,13 @@
 /* CSS */
 @import '~typeface-open-sans/index.css';
 
+body {
+  background-image: url('../public/fullbackground.jpeg');
+  background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+}
+
 .searchBoxContainer {
         max-width: 850px;
         margin: 40px auto;
@@ -14,6 +21,10 @@
         /* font-family: cursive; */
         font-family: 'Open Sans', sans-serif;
         background-color: lightblue;
+        /* background-image: url('../public//hotelbackground.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%; */
         color: black;
         width: 100%;
       }
