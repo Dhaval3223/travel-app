@@ -28,6 +28,7 @@ function App() {
   const handleResultClick = async () => {
     // Perform the action when the result button is clicked
     setLoader(true);
+    setHotels([]);
     const request1 = axios.get('https://647b9b0dd2e5b6101db178a6.mockapi.io/api/v1/hotels');
 
   try {
