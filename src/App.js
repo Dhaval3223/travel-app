@@ -12,10 +12,13 @@ import StarRating from './components/starRating';
 import TextBox from './components/textBox';
 import MultiSelectComboBox from './components/comboBoxMultiSelect';
 import axios from 'axios';
+import MediaControlCard from './components/hotelDummyCard';
+import { Box } from '@mui/material';
 
 function App() {
   const [selectedValues, setSelectedValues] = useState([]);
   const [selectedAPIs, setSelectedAPIs] = useState([]);
+  const [hotels, setHotels] = useState([]);
 
   const handleMultiSelectChange = (values) => {
     setSelectedValues(values);
@@ -23,61 +26,14 @@ function App() {
 
   const handleResultClick = async () => {
     // Perform the action when the result button is clicked
-    const request1 = axios.post('https://api.smyrooms.com/search', {
-      "HubProvider": "TTHOT",
-      "Language": "es",
-      "TimeoutMilliseconds": 300000,
-      "Configuration": {
-        "User": "31538",
-        "Password": "cb4a4cf6-3edd-45b7-af37-005890e3b04b",
-        "ShowPackageRates": true,
-        "AccessToken": "Fp+jMTdgiQNfqZcvFkPGAmlM3O8xxD+CAK85aS/wul7yuqLPifgL/ZLkKsokWegVK4iJ2aSXFyZp3hBHbenH0g==",
-        "BookingEmail": "daniel.diez@smyrooms.com",
-        "Test": true
-      },
-      "Hotels": [
-        "13037"
-      ],
-      "StartDate": "2023-08-14T00:00:00Z",
-      "EndDate": "2023-08-20T00:00:00Z",
-      "Currency": "EUR",
-      "RoomCandidates": [
-        {
-          "Id": 1,
-          "Paxes": [
-            {
-              "Id": 1,
-              "Age": 30
-            },
-            {
-              "Id": 2,
-              "Age": 30
-            }
-          ]
-        },
-            {
-          "Id": 2,
-          "Paxes": [
-            {
-              "Id": 1,
-              "Age": 30
-            },
-            {
-              "Id": 2,
-              "Age": 30
-            }
-          ]
-        }
-      ],
-      "Market": "ES",
-      "CancellationPolicies": false
-    });
+    const request1 = axios.get('https://647b9b0dd2e5b6101db178a6.mockapi.io/api/v1/hotels');
 
   try {
     const responses = await Promise.all([request1]);
     // Handle the responses
     responses.forEach((response, index) => {
       console.log(`Response ${index + 1}:`, response.data);
+      setHotels(response.data);
     });
   } catch (error) {
     console.log('Error:', error);
@@ -171,6 +127,16 @@ function App() {
           </div>
         </div>
       </div>
+      {(hotels || []).map(item => {
+        return (
+          <>
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 50px auto', maxWidth: '850px' }}>
+            <MediaControlCard item={item} />
+          </Box>
+          </>
+        )
+      })
+      }
     </div>
   );
 }
