@@ -13,12 +13,13 @@ import TextBox from './components/textBox';
 import MultiSelectComboBox from './components/comboBoxMultiSelect';
 import axios from 'axios';
 import MediaControlCard from './components/hotelDummyCard';
-import { Box } from '@mui/material';
+import { Backdrop, Box, CircularProgress } from '@mui/material';
 
 function App() {
   const [selectedValues, setSelectedValues] = useState([]);
   const [selectedAPIs, setSelectedAPIs] = useState([]);
   const [hotels, setHotels] = useState([]);
+  const [loader, setLoader] = useState(false);
 
   const handleMultiSelectChange = (values) => {
     setSelectedValues(values);
@@ -26,22 +27,35 @@ function App() {
 
   const handleResultClick = async () => {
     // Perform the action when the result button is clicked
+    setLoader(true);
     const request1 = axios.get('https://647b9b0dd2e5b6101db178a6.mockapi.io/api/v1/hotels');
 
   try {
     const responses = await Promise.all([request1]);
     // Handle the responses
+    setLoader(false);
     responses.forEach((response, index) => {
       console.log(`Response ${index + 1}:`, response.data);
       setHotels(response.data);
     });
+    setLoader(false);
   } catch (error) {
+    setLoader(false);
     console.log('Error:', error);
   }
   };
 
   return (
     <div className="App">
+      {loader && (
+        <Backdrop
+          sx={{ color: '#fff', zIndex: theme => theme.zIndex.drawer + 1 }}
+          open={true}
+          // onClick={!isCustomerLoading}
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
+      )}
       <div className='searchBoxContainer'>
         <div className='searchBox'>
           <div className='row'>
