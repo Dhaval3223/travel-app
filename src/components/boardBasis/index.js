@@ -11,9 +11,9 @@ const BoardBasis = () => {
     { id: 1, label: 'Room Only' },
     { id: 2, label: 'Self Centering' },
     { id: 3, label: 'Half Board' },
-    { id: 3, label: 'Bad And Breakfast' },
-    { id: 3, label: 'Full Board' },
-    { id: 3, label: 'All Inclusive' },
+    { id: 4, label: 'Bad And Breakfast' },
+    { id: 5, label: 'Full Board' },
+    { id: 6, label: 'All Inclusive' },
     // Add more options as needed
   ];
 
