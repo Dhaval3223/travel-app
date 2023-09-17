@@ -14,81 +14,133 @@ import MultiSelectComboBox from "./components/comboBoxMultiSelect";
 import axios from "axios";
 import MediaControlCard from "./components/hotelDummyCard";
 import { Backdrop, Box, CircularProgress } from "@mui/material";
+import jsonData from "./data.json";
 
 function App() {
   const [selectedValues, setSelectedValues] = useState([]);
   const [selectedAPIs, setSelectedAPIs] = useState([]);
   const [hotels, setHotels] = useState([]);
   const [loader, setLoader] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [checkoutDate, setCheckOutDate] = useState(null);
+  const [adultCount, setAdultCount] = useState(0);
+  const [childCount, setChildCount] = useState(0);
+  const [infantCount, setInfantCount] = useState(0);
+  const [text, setText] = useState("");
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleMultiSelectChange = (values) => {
     setSelectedValues(values);
   };
 
+  console.log(
+    "selectedDate",
+    selectedDate,
+    selectedOptions.some((item) => item === "Symrooms")
+  );
+
+  function extractRooms(jsonData) {
+    const roomsArray = [];
+
+    // Check if the input data has a "Hotels" array
+    if (jsonData.Hotels && Array.isArray(jsonData.Hotels)) {
+      jsonData.Hotels.forEach((hotel) => {
+        if (hotel.MealPlans && Array.isArray(hotel.MealPlans)) {
+          hotel.MealPlans.forEach((mealPlan) => {
+            if (mealPlan.Options && Array.isArray(mealPlan.Options)) {
+              mealPlan.Options.forEach((option) => {
+                if (option.Rooms && Array.isArray(option.Rooms)) {
+                  roomsArray.push(...option.Rooms);
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+
+    return roomsArray;
+  }
+
+  // Example usage:
+
+  const rooms = extractRooms(jsonData);
+  console.log("rooms", rooms);
+
   const handleResultClick = async () => {
     // Perform the action when the result button is clicked
     setLoader(true);
     setHotels([]);
-    // const request1 = axios.get(
-    //   "https://647b9b0dd2e5b6101db178a6.mockapi.io/api/v1/hotels"
-    // );
-    const request = axios.post("http://154.41.253.139:3000/search", {
-      "HubProvider": "TTHOT",
-      "Language": "es",
-      "TimeoutMilliseconds": 300000,
-      "Configuration": {
-        "User": "31538",
-        "Password": "cb4a4cf6-3edd-45b7-af37-005890e3b04b",
-        "ShowPackageRates": true,
-        "AccessToken": "Fp+jMTdgiQNfqZcvFkPGAmlM3O8xxD+CAK85aS/wul7yuqLPifgL/ZLkKsokWegVK4iJ2aSXFyZp3hBHbenH0g==",
-        "BookingEmail": "daniel.diez@smyrooms.com",
-        "Test": true
-      },
-      "Hotels": [
-        "13037"
-      ],
-      "StartDate": "2023-10-14T00:00:00Z",
-      "EndDate": "2023-10-20T00:00:00Z",
-      "Currency": "EUR",
-      "RoomCandidates": [
-        {
-          "Id": 1,
-          "Paxes": [
+    let payload;
+    if (selectedOptions.some((item) => item === "Symrooms")) {
+      payload = {
+        bedbank: "https://api.smyrooms.com/search",
+        data: {
+          HubProvider: "TTHOT",
+          Language: "es",
+          TimeoutMilliseconds: 300000,
+          Configuration: {
+            User: "31538",
+            Password: "cb4a4cf6-3edd-45b7-af37-005890e3b04b",
+            ShowPackageRates: true,
+            AccessToken:
+              "Fp+jMTdgiQNfqZcvFkPGAmlM3O8xxD+CAK85aS/wul7yuqLPifgL/ZLkKsokWegVK4iJ2aSXFyZp3hBHbenH0g==",
+            BookingEmail: "daniel.diez@smyrooms.com",
+            Test: true,
+          },
+          Hotels: [text],
+          StartDate: new Date(selectedDate)?.toISOString(),
+          EndDate: new Date(checkoutDate)?.toISOString(),
+          Currency: "EUR",
+          RoomCandidates: [
             {
-              "Id": 1,
-              "Age": 30
+              Id: 1,
+              Paxes: Array(adultCount)
+                ?.fill("_")
+                ?.map((item, Id) => ({
+                  Id,
+                  Age: 30,
+                })),
             },
             {
-              "Id": 2,
-              "Age": 30
-            }
-          ]
+              Id: 2,
+              Paxes: Array(childCount)
+                ?.fill("_")
+                ?.map((item, Id) => ({
+                  Id,
+                  Age: 10,
+                })),
+            },
+            {
+              Id: 3,
+              Paxes: Array(infantCount)
+                ?.fill("_")
+                ?.map((item, Id) => ({
+                  Id,
+                  Age: 1,
+                })),
+            },
+          ],
+          Market: "ES",
+          CancellationPolicies: false,
         },
-            {
-          "Id": 2,
-          "Paxes": [
-            {
-              "Id": 1,
-              "Age": 30
-            },
-            {
-              "Id": 2,
-              "Age": 30
-            }
-          ]
-        }
-      ],
-      "Market": "ES",
-      "CancellationPolicies": false
-    });
+      };
+    }
 
     try {
-      const responses = await Promise.all([request]);
+      const response = await axios.post(
+        "http://154.41.253.139:2020/api/search",
+        payload
+      );
+      console.log("response", response);
+      // const response = await Promise.all([request]);
       // Handle the responses
       setLoader(false);
       // responses.forEach((response, index) => {
-      //   console.log(`Response ${index + 1}:`, response.data);
-      //   setHotels(response.data);
+      // console.log(`Response ${index + 1}:`, response.data);
+      const rooms = extractRooms(response.data);
+      console.log("rooms", rooms);
+      setHotels(rooms);
       // });
       setLoader(false);
     } catch (error) {
@@ -138,10 +190,16 @@ function App() {
               </div>
               <div className="datePickerContainer">
                 <div className="checkInDate">
-                  <ChekInDatePicker />
+                  <ChekInDatePicker
+                    setSelectedDate={setSelectedDate}
+                    selectedDate={selectedDate}
+                  />
                 </div>
                 <div className="checkOutDate">
-                  <ChekckOutDatePicker />
+                  <ChekckOutDatePicker
+                    setSelectedDate={setCheckOutDate}
+                    selectedDate={checkoutDate}
+                  />
                 </div>
               </div>
               <div className="boardBasis">
@@ -149,13 +207,22 @@ function App() {
               </div>
 
               <div className="incremtor">
-                <AdultIncrementor />
+                <AdultIncrementor
+                  setAdultCount={setAdultCount}
+                  adultCount={adultCount}
+                />
               </div>
               <div className="incremtor">
-                <ChildIncrementor />
+                <ChildIncrementor
+                  setAdultCount={setChildCount}
+                  adultCount={childCount}
+                />
               </div>
               <div className="incremtor">
-                <InfantIncrementor />
+                <InfantIncrementor
+                  setAdultCount={setInfantCount}
+                  adultCount={infantCount}
+                />
               </div>
             </div>
             <div className="col-md-6">
@@ -165,7 +232,7 @@ function App() {
               </div>
               <div className="hotelName">
                 <p>Hotel Name</p>
-                <TextBox />
+                <TextBox text={text} setText={setText} />
               </div>
               <div className="resortName">
                 <p>Resort Name</p>
@@ -176,6 +243,8 @@ function App() {
                 <MultiSelectComboBox
                   options={["Orbis travels", "Symrooms"]}
                   onChange={handleMultiSelectChange}
+                  setSelectedOptions={setSelectedOptions}
+                  selectedOptions={selectedOptions}
                 />
               </div>
               <div className="minMaxPrice">
@@ -191,7 +260,7 @@ function App() {
           </div>
         </div>
       </div>
-      {(hotels || []).map((item) => {
+      {(hotels || [])?.map((item) => {
         return (
           <>
             <Box

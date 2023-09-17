@@ -1,0 +1,212 @@
+{
+  "Hotels": [
+      {
+          "Code": "13037",
+          "MealPlans": [
+              {
+                  "Code": "HD",
+                  "Options": [
+                      {
+                          "AgencyToken": "BCJNGEBAwKYBAAD0DAoFMTMwMzcSAkhEGgoxNC8xMC8yMDIzIgoyMAwA8S4qC01lcmNoYW50UGF5MgNVU0Q6EQoDVVNEEgcyNDE0LjQxIgwEwQhcKBjEjNjI5NxABGgQ2Mjk3IgUzMC0zGQASMhkAGQIZALFKDwoBMRIECB4QAQYAYQJKDwoBMgsAAxEA/0paBTEuMDY2YhMyMDIzLTA5LTE2VDExOjQ1OjU1chMI8v////aUxIGazARCTybqRDhg4ggEESVRSSZIBAkVTmgECCATCAQEw4gEFQVZBSUzqAQEw8gEeNi45OQIABUc4NvoBbQDxEiAxNDoxMjozNYoCCDwzMTUzOCM+kgIBN5oCAzAuMMICBRQAkgcoCATDaAgFQ+hYA8QuCAwMwLjCiA0gxMzAzN3wyMDIzMTAxNHw2fA4BEV8GAP8jfEVTfEhEfFB8SVRSSXwwfHx8fE18SHxKUDk4NDYzM3w2Mjk3XzYyOTd8fHyyAx4xLjABAAgvwgMLAQHzBdoDAOIDFRIDVVNEGgYItq8BGAIqCADwBuoDEgkLVm6sdoxfRBGJeNKnpnUVMwAAAAA=",
+                          "OptionType": 0,
+                          "PaymentType": 1,
+                          "Rooms": [
+                              {
+                                  "Id": "1#6297",
+                                  "RoomCandidateRefId": 1,
+                                  "Code": "6297",
+                                  "Description": "Habitación",
+                                  "NonRefundable": null,
+                                  "Price": {
+                                      "Currency": "USD",
+                                      "Amount": 1207.2,
+                                      "Binding": false,
+                                      "Commission": 0.0
+                                  },
+                                  "IdRoomPrv": ""
+                              },
+                              {
+                                  "Id": "2#6297",
+                                  "RoomCandidateRefId": 2,
+                                  "Code": "6297",
+                                  "Description": "Habitación",
+                                  "NonRefundable": null,
+                                  "Price": {
+                                      "Currency": "USD",
+                                      "Amount": 1207.21,
+                                      "Binding": false,
+                                      "Commission": 0.0
+                                  },
+                                  "IdRoomPrv": ""
+                              }
+                          ],
+                          "RateRules": [
+                              {
+                                  "TypeRateRule": 4
+                              }
+                          ],
+                          "Price": {
+                              "Currency": "USD",
+                              "Amount": 2414.41,
+                              "Binding": false,
+                              "Commission": 0
+                          },
+                          "Fees": null,
+                          "CancelPenalties": null,
+                          "Remarks": null,
+                          "Offers": []
+                      },
+                      {
+                          "AgencyToken": "BCJNGEBAwMoBAAD0DAoFMTMwMzcSAkhEGgoxNC8xMC8yMDIzIgoyMAwA8TAqC01lcmNoYW50UGF5MgNFVVI6EwoDRVVSEgcyMTAzLjQyIgIMwLjBCFwoGMSM0MDg5EAEaBDQwODkiBTMwLTMZABIyGQAZAhkAsUoPCgExEgQIHhABBgBhAkoPCgEyCwADEQD3XFoBMWITMjAyMy0wOS0xNlQwMTowNTowNnISCJqFk8SW6bjFaxCI+vO+PAhg2ggEEVzJNMpIBAkVTwgEBMOIBBUFWQUlM6gEBMPIBHjEwLjUxNzQ5NTIyMTYzNDI0NDgzNTI2ODY3NDIwMvoBZwDxHyAxNDoxMjozNYoCFTwzMTUzOCMrMC43NaSBbMTI0NzddPpICATeaAgMwLjDCAgUhAFHKAgEw+hIAkYIDAzAuMKIDSFgBwXwyMDIzMTAxNHw2fA0BEV8GAP8ufEVTfEhEfEh8VzJNMnwwfHx8fE18SHxKUDk4NDYzM3w0MDg5XzQwODl8fHyyAwExugMICOjovJMBGBHCA/wAAPAr2gMA4gMfCAESA0VVUhoGCMyXARgCIgYIr4NeGA4qBgjM8HIYBuoDEgkLVm6sdoxfRBGJeNKnpnUVMwAAAAA=",
+                          "OptionType": 0,
+                          "PaymentType": 1,
+                          "Rooms": [
+                              {
+                                  "Id": "1#4089",
+                                  "RoomCandidateRefId": 1,
+                                  "Code": "4089",
+                                  "Description": "Habitación Plus",
+                                  "NonRefundable": null,
+                                  "Price": {
+                                      "Currency": "EUR",
+                                      "Amount": 1051.7,
+                                      "Binding": false,
+                                      "Commission": 0.0
+                                  },
+                                  "IdRoomPrv": ""
+                              },
+                              {
+                                  "Id": "2#4089",
+                                  "RoomCandidateRefId": 2,
+                                  "Code": "4089",
+                                  "Description": "Habitación Plus",
+                                  "NonRefundable": null,
+                                  "Price": {
+                                      "Currency": "EUR",
+                                      "Amount": 1051.72,
+                                      "Binding": false,
+                                      "Commission": 0.0
+                                  },
+                                  "IdRoomPrv": ""
+                              }
+                          ],
+                          "RateRules": [],
+                          "Price": {
+                              "Currency": "EUR",
+                              "Amount": 2103.42,
+                              "Binding": false,
+                              "Commission": 0.0
+                          },
+                          "Fees": null,
+                          "CancelPenalties": null,
+                          "Remarks": null,
+                          "Offers": []
+                      }
+                  ]
+              },
+              {
+                  "Code": "SA",
+                  "Options": [
+                      {
+                          "AgencyToken": "BCJNGEBAwMoBAAD0DAoFMTMwMzcSAlNBGgoxNC8xMC8yMDIzIgoyMAwA8TAqC01lcmNoYW50UGF5MgNFVVI6EwoDRVVSEgcxODU3Ljk3IgIMwLjBCFwoGMSM0MDg5EAEaBDQwODkiBTMwLTMZABIyGQAZAhkAsUoPCgExEgQIHhABBgBhAkoPCgEyCwADEQD3XFoBMWITMjAyMy0wOS0xNlQwMTowNTowNnISCJyFk8SW6bjFaxC6+vO+PAhg2ggEEVzJNMpIBAkVTwgEBMOIBBUFWQUlM6gEBMPIBHjEwLjUxNzQ5NTIyMTYzNDI0NDgzNTI2ODY3NDIwNPoBZwDxHyAxNDoxMjozNYoCFTwzMTUzOCMrMC43NwSBbMTI0NzddPpICATeaAgMwLjDCAgUhAFHKAgEw+hIAkYIDAzAuMKIDSFgBwXwyMDIzMTAxNHw2fA0BEV8GAP8ufEVTfFNBfEh8VzJNMnwwfHx8fE18SHxKUDk4NDYzM3w0MDg5XzQwODl8fHyyAwExugMICOjovJMBGBHCA/wAAPAr2gMA4gMfCAESA0VVUhoGCIa7ChgEIgYIvYJeGA4qBgjhvGUYBuoDEgkLVm6sdoxfRBGJeNKnpnUVMwAAAAA=",
+                          "OptionType": 0,
+                          "PaymentType": 1,
+                          "Rooms": [
+                              {
+                                  "Id": "1#4089",
+                                  "RoomCandidateRefId": 1,
+                                  "Code": "4089",
+                                  "Description": "Habitación Plus",
+                                  "NonRefundable": null,
+                                  "Price": {
+                                      "Currency": "EUR",
+                                      "Amount": 928.99,
+                                      "Binding": false,
+                                      "Commission": 0.0
+                                  },
+                                  "IdRoomPrv": ""
+                              },
+                              {
+                                  "Id": "2#4089",
+                                  "RoomCandidateRefId": 2,
+                                  "Code": "4089",
+                                  "Description": "Habitación Plus",
+                                  "NonRefundable": null,
+                                  "Price": {
+                                      "Currency": "EUR",
+                                      "Amount": 928.98,
+                                      "Binding": false,
+                                      "Commission": 0.0
+                                  },
+                                  "IdRoomPrv": ""
+                              }
+                          ],
+                          "RateRules": [],
+                          "Price": {
+                              "Currency": "EUR",
+                              "Amount": 1857.97,
+                              "Binding": false,
+                              "Commission": 0.0
+                          },
+                          "Fees": null,
+                          "CancelPenalties": null,
+                          "Remarks": null,
+                          "Offers": []
+                      },
+                      {
+                          "AgencyToken": "BCJNGEBAwKYBAAD0DAoFMTMwMzcSAlNBGgoxNC8xMC8yMDIzIgoyMAwA8S4qC01lcmNoYW50UGF5MgNVU0Q6EQoDVVNEEgcyMTMyLjc1IgVEwQhcKBjEjNjI5NxABGgQ2Mjk3IgUzMC0zGQASMhkAGQIZALFKDwoBMRIECB4QAQYAYQJKDwoBMgsAAxEA/0paBTEuMDY2YhMyMDIzLTA5LTE2VDExOjQ1OjU1chMI7f////aUxIGMzARCTybqRDhg4ggEESVRSSZIBAkVTmgECCATCAQEw4gEFQVZBSUzqAQEw8gEeNi45OQIABUc4MfoBbQDxEiAxNDoxMjozNYoCCDwzMTUzOCM+kgIBN5oCAzAuMMICBRQAkvcoCATDaAgFQ+hYA8QuCAwMwLjCiA0gxMzAzN3wyMDIzMTAxNHw2fA4BEV8GAP8jfEVTfFNBfFB8SVRSSXwwfHx8fE18SHxKUDk4NDYzM3w2Mjk3XzYyOTd8fHyyAx4xLjABAAgvwgMLAQHzBdoDAOIDFRIDVVNEGgYIyo0MGAQqCADwBuoDEgkLVm6sdoxfRBGJeNKnpnUVMwAAAAA=",
+                          "OptionType": 0,
+                          "PaymentType": 1,
+                          "Rooms": [
+                              {
+                                  "Id": "1#6297",
+                                  "RoomCandidateRefId": 1,
+                                  "Code": "6297",
+                                  "Description": "Habitación",
+                                  "NonRefundable": null,
+                                  "Price": {
+                                      "Currency": "USD",
+                                      "Amount": 1066.38,
+                                      "Binding": false,
+                                      "Commission": 0.0
+                                  },
+                                  "IdRoomPrv": ""
+                              },
+                              {
+                                  "Id": "2#6297",
+                                  "RoomCandidateRefId": 2,
+                                  "Code": "6297",
+                                  "Description": "Habitación",
+                                  "NonRefundable": null,
+                                  "Price": {
+                                      "Currency": "USD",
+                                      "Amount": 1066.37,
+                                      "Binding": false,
+                                      "Commission": 0.0
+                                  },
+                                  "IdRoomPrv": ""
+                              }
+                          ],
+                          "RateRules": [
+                              {
+                                  "TypeRateRule": 4
+                              }
+                          ],
+                          "Price": {
+                              "Currency": "USD",
+                              "Amount": 2132.75,
+                              "Binding": false,
+                              "Commission": 0
+                          },
+                          "Fees": null,
+                          "CancelPenalties": null,
+                          "Remarks": null,
+                          "Offers": []
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "OperationImplemented": null
+}

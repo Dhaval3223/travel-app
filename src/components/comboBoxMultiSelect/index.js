@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './MultiSelectComboBox.css'; // Import the CSS file for styling
 
-const MultiSelectComboBox = ({ options, onChange }) => {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+const MultiSelectComboBox = ({ options, onChange, selectedOptions, setSelectedOptions }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './TextBox.css'; // Import the CSS file for styling
 
-const TextBox = () => {
-  const [text, setText] = useState('');
+const TextBox = ({ text, setText }) => {
 
   const handleChange = (event) => {
     setText(event.target.value);

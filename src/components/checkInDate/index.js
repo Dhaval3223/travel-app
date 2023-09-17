@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './ChekInDatePicker.css'; // Import the CSS file for styling
 
-const ChekInDatePicker = () => {
-  const [selectedDate, setSelectedDate] = useState('');
+const ChekInDatePicker = ({ selectedDate, setSelectedDate }) => {
 
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value);

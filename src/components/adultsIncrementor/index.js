@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './AdultIncrementor.css'; // Import the CSS file for styling
 
-const AdultIncrementor = () => {
-  const [adultCount, setAdultCount] = useState(0);
+const AdultIncrementor = ({ adultCount, setAdultCount }) => {
 
   const handleIncrement = () => {
     setAdultCount(adultCount + 1);
